@@ -10,6 +10,7 @@ import { VenturesSection } from '@/components/sections/VenturesSection';
 import { VisionSection } from '@/components/sections/VisionSection';
 import { PeopleSection } from '@/components/sections/PeopleSection';
 import { ContactSection } from '@/components/sections/ContactSection';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { AfricanContinentScene } from '@/components/3d/AfricanContinentScene';
 
 export default function Home() {

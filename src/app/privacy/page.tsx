@@ -18,7 +18,7 @@ export default function PrivacyPage() {
 
             <h2 className="font-display font-bold text-2xl mt-12 mb-4">1. Introduction</h2>
             <p className="font-body text-white/70 mb-6">
-              Imagine Dreams Africa ("we", "our", or "us") respects your privacy and is committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit the website imaginedreams.org and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+              Imagine Dreams Africa (&rdquo;we&ldquo;, &rdquo;our&ldquo;, or &rdquo;us&ldquo;) respects your privacy and is committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit the website imaginedreams.org and our practices for collecting, using, maintaining, protecting, and disclosing that information.
             </p>
 
             <h2 className="font-display font-bold text-2xl mt-12 mb-4">2. Information We Collect</h2>
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               We collect several types of information from and about users of our website, including information:
             </p>
             <ul className="list-disc list-inside space-y-2 font-body text-white/70 mb-6">
-              <li>By which you may be personally identified ("personal data")</li>
+              <li>By which you may be personally identified (&quot;personal data&quot;)</li>
               <li>About your internet connection, the equipment you use to access our website, and usage details</li>
               <li>That you provide directly by filling in forms on our website (such as contact forms)</li>
               <li>When you contact us about employment opportunities or business inquiries</li>
