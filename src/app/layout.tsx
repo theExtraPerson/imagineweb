@@ -38,7 +38,7 @@ export default function RootLayout({
       }}
     >
       <body 
-        className="min-h-full flex flex-col"
+        className="min-h-full flex flex-col background-white"
         suppressHydrationWarning
       >
         {children}

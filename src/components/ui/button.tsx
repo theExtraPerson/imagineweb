@@ -12,9 +12,9 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   ({ className, variant = 'primary', size = 'md', children, asChild, ...props }, ref) => {
     // Variant styles
     const variants = {
-      primary: 'bg-white text-black hover:bg-white/90',
-      secondary: 'border border-white text-white hover:bg-white/10',
-      tertiary: 'text-white hover:text-white/70 underline-offset-4 hover:underline',
+      primary: 'bg-[var(--black)] text-[var(--white)] hover:bg-[var(--black)]/90 shadow-[var(--ink-glow)]',
+      secondary: 'border border-[rgba(8,8,8,0.25)] text-[var(--black)] hover:bg-[var(--black)] hover:text-[var(--white)]',
+      tertiary: 'text-[var(--black)] hover:text-[var(--black)]/70 underline-offset-4 hover:underline',
     };
 
     // Size styles

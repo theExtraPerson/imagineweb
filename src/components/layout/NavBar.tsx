@@ -40,7 +40,7 @@ export function NavBar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'sticky top-5 left-0 right-0 z-50 transition-all duration-300',
         scrolled ? 'py-4' : 'py-6'
       )}
       style={{
@@ -52,13 +52,13 @@ export function NavBar() {
           {/* Logo */}
           <Link 
             href="#home" 
-            className="font-display font-bold text-2xl tracking-tight hover:opacity-70 transition-opacity"
+             className="px-6 py-3 bg-black text-white text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity"
           >
-            IDA
+            home
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className=" text-white md:flex items-center gap-12">
             {NAVIGATION.map((item) => (
               <Link
                 key={item.label}

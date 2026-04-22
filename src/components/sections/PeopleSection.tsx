@@ -3,7 +3,6 @@
 /**
  * IMAGINE DREAMS AFRICA — PEOPLE SECTION
  * The builders - team and recruitment
- * PRD Section 08: People Section Specifications
  */
 
 import { PEOPLE } from '@/lib/constants';
@@ -13,11 +12,11 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll';
 
 export function PeopleSection() {
   return (
-    <section id="people" className="brutalist-section bg-[var(--black)]">
+    <section id="people" className="brutalist-section bg-[var(--white)] text-[var(--black)]">
       <div className="brutalist-container max-w-[1600px] mx-auto">
         {/* Section label */}
         <RevealOnScroll direction="up">
-          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-white/50 mb-16">
+          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-black/60 mb-16">
             06 · The Builders
           </p>
         </RevealOnScroll>
@@ -29,7 +28,7 @@ export function PeopleSection() {
               {PEOPLE.heading[0]}<br />
               <span 
                 className="text-transparent"
-                style={{ WebkitTextStroke: '1px rgba(240,237,228,0.35)' }}
+                style={{ WebkitTextStroke: '1px rgba(8,8,8,0.25)' }}
               >
                 {PEOPLE.heading[1]}
               </span>
@@ -37,7 +36,7 @@ export function PeopleSection() {
           </RevealOnScroll>
 
           <RevealOnScroll direction="right">
-            <p className="font-body text-xl text-white/70 leading-relaxed">
+            <p className="font-body text-xl text-[var(--black)]/75 leading-relaxed">
               {PEOPLE.invitation}
             </p>
           </RevealOnScroll>
@@ -55,8 +54,8 @@ export function PeopleSection() {
                 viewport={{ once: true }}
                 className={`p-12 flex flex-col items-center justify-center aspect-square text-center ${
                   role.filled 
-                    ? 'bg-white text-black' 
-                    : 'border border-dashed border-white/30'
+                    ? 'bg-[var(--black)] text-[var(--white)] shadow-[var(--ink-glow)]'
+                    : 'border border-dashed border-[rgba(8,8,8,0.25)] bg-[var(--white)]'
                 }`}
               >
                 <span className="font-display font-bold text-2xl mb-3">
@@ -64,11 +63,11 @@ export function PeopleSection() {
                 </span>
                 
                 {role.filled ? (
-                  <span className="text-xs font-mono uppercase tracking-[0.1em] opacity-70">
+                  <span className="text-xs font-mono uppercase tracking-[0.1em] opacity-80">
                     {role.name}
                   </span>
                 ) : (
-                  <span className="text-xs font-mono uppercase tracking-[0.1em] opacity-50 mt-2">
+                  <span className="text-xs font-mono uppercase tracking-[0.1em] opacity-70 mt-2 text-[var(--black)]">
                     {role.question}
                   </span>
                 )}
@@ -79,13 +78,13 @@ export function PeopleSection() {
 
         {/* CTA Band */}
         <RevealOnScroll direction="up">
-          <div className="bg-white text-black py-16 px-12 md:px-16">
+          <div className="bg-[var(--white)] text-[var(--black)] py-16 px-12 md:px-16 border border-[rgba(8,8,8,0.12)]">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
                 <h3 className="font-display font-bold text-3xl md:text-4xl mb-3">
                   {PEOPLE.ctaBand.heading}
                 </h3>
-                <p className="font-body text-base italic opacity-70">
+                <p className="font-body text-base italic text-[var(--black)]/70">
                   Join us in building Africa&apos;s digital future
                 </p>
               </div>
@@ -109,3 +108,4 @@ export function PeopleSection() {
     </section>
   );
 }
+

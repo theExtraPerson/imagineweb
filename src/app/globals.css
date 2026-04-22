@@ -8,14 +8,17 @@
 :root {
   /* Colour System - PRD Section 03 */
   --black: #080808;
-  --white: #F2EFE8;
-  --gray: #888880;
-  --border: #CCCCBC;
+  --white: #F0E7D5;
+  --gray: #4A4A45;
+  --border: #222222;
   
   /* Typography */
   --font-display: var(--font-bebas-neue);
   --font-body: var(--font-libre-baskerville);
   --font-mono: var(--font-jetbrains-mono);
+
+  /* The "Dark Glow" (Ink Bleed) effect */
+  --ink-glow: 0 0 1px rgba(8, 8, 8, 0.3), 0 0 12px rgba(8, 8, 8, 0.1);
   
   /* Motion easings - from PRD Motion table */
   --ease-arrival: cubic-bezier(0.16, 1, 0.3, 1);
@@ -34,11 +37,13 @@ html {
 }
 
 body {
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-body);
   line-height: 1.7;
+  text-shadow: var(--ink-glow);
   overflow-x: hidden;
+  filter: contrast(1.05) brightness(0.98);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,18 +79,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--black);
+  background: var(--white);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray);
+  background: var(--black);
   border-radius: 2px;
+  border: 1px solid var(--white);
 }
 
 /* Selection colour */
 ::selection {
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
+}
+
+.outline-text {
+  -webkit-text-stroke: 1px rgba(8, 8, 8, 0.18);
 }
 
 /* Focus states */

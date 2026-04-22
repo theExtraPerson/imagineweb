@@ -3,10 +3,9 @@
 /**
  * IMAGINE DREAMS AFRICA — CONTACT SECTION
  * Multi-pathway contact: form + email + social
- * PRD Section 08: Contact Section Specifications
  */
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { CONTACT } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { RevealOnScroll } from '@/components/animations/RevealOnScroll';
@@ -14,7 +13,7 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll';
 export function ContactSection() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFormState('submitting');
 
@@ -34,18 +33,17 @@ export function ContactSection() {
       } else {
         setFormState('error');
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error) {
+    } catch {
       setFormState('error');
     }
   }
 
   return (
-    <section id="contact" className="brutalist-section bg-[var(--black)]">
+    <section id="contact" className="brutalist-section bg-[var(--white)] text-[var(--black)]">
       <div className="brutalist-container max-w-[1600px] mx-auto">
         {/* Section label */}
         <RevealOnScroll direction="up">
-          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-white/50 mb-16">
+          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-black/60 mb-16">
             07 · Find Us
           </p>
         </RevealOnScroll>
@@ -57,7 +55,7 @@ export function ContactSection() {
               {CONTACT.heading[0]}<br />
               <span 
                 className="text-transparent"
-                style={{ WebkitTextStroke: '1px rgba(240,237,228,0.35)' }}
+                style={{ WebkitTextStroke: '1px rgba(8,8,8,0.25)' }}
               >
                 {CONTACT.heading[1]}
               </span>
@@ -68,7 +66,7 @@ export function ContactSection() {
 
           <RevealOnScroll direction="right">
             <div>
-              <p className="font-body text-xl text-white/70 leading-relaxed mb-10">
+              <p className="font-body text-xl text-[var(--black)]/75 leading-relaxed mb-10">
                 {CONTACT.sub}
               </p>
 
@@ -77,13 +75,13 @@ export function ContactSection() {
                 <div>
                   <a 
                     href={`mailto:${CONTACT.email}`}
-                    className="font-body text-2xl italic hover:opacity-70 transition-opacity"
+                    className="font-body text-2xl italic hover:opacity-70 transition-opacity underline decoration-[var(--black)]/20"
                   >
                     {CONTACT.email}
                   </a>
                 </div>
 
-                <div className="text-sm font-mono uppercase tracking-[0.1em] text-white/50">
+                <div className="text-sm font-mono uppercase tracking-[0.1em] text-black/60">
                   {CONTACT.location}
                 </div>
 
@@ -95,7 +93,7 @@ export function ContactSection() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-mono uppercase tracking-[0.1em] text-white/50 hover:text-white transition-colors"
+                      className="text-xs font-mono uppercase tracking-[0.1em] text-black/60 hover:text-[var(--black)] transition-colors"
                     >
                       {social.label}
                     </a>
@@ -127,7 +125,7 @@ export function ContactSection() {
                       rows={5}
                       placeholder={field.placeholder}
                       required
-                      className="w-full bg-transparent border border-white/20 px-5 py-4 text-sm font-mono focus:outline-none focus:border-white transition-colors resize-none"
+                      className="w-full bg-transparent border border-[rgba(8,8,8,0.2)] px-5 py-4 text-sm font-mono focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
                     />
                   ) : (
                     <input
@@ -136,7 +134,7 @@ export function ContactSection() {
                       name={field.name}
                       placeholder={field.placeholder}
                       required
-                      className="w-full bg-transparent border border-white/20 px-5 py-4 text-sm font-mono focus:outline-none focus:border-white transition-colors"
+                      className="w-full bg-transparent border border-[rgba(8,8,8,0.2)] px-5 py-4 text-sm font-mono focus:outline-none focus:border-[var(--black)] transition-colors"
                     />
                   )}
                 </div>
@@ -153,7 +151,7 @@ export function ContactSection() {
               </Button>
 
               {/* Trust line */}
-              <p className="text-xs font-mono text-white/50 text-center mt-6">
+              <p className="text-xs font-mono text-black/60 text-center mt-6">
                 {CONTACT.trustLine}
               </p>
             </form>
@@ -161,25 +159,25 @@ export function ContactSection() {
             {/* Success/Error states */}
             <div className="hidden md:flex items-center justify-center">
               {formState === 'success' && (
-                <div className="text-center p-8 border border-white/20">
+                <div className="text-center p-8 border border-[rgba(8,8,8,0.2)] bg-[var(--white)]">
                   <h3 className="font-display font-bold text-2xl mb-4">Message Sent</h3>
-                  <p className="font-body text-white/70">
+                  <p className="font-body text-[var(--black)]/75">
                     We&apos;ll get back to you within 48 hours.
                   </p>
                 </div>
               )}
 
               {formState === 'error' && (
-                <div className="text-center p-8 border border-red-500/20">
-                  <h3 className="font-display font-bold text-2xl mb-4 text-red-400">Error</h3>
-                  <p className="font-body text-white/70">
+                <div className="text-center p-8 border border-red-500/30 bg-red-50">
+                  <h3 className="font-display font-bold text-2xl mb-4 text-red-700">Error</h3>
+                  <p className="font-body text-red-700">
                     Please try again or email us directly.
                   </p>
                 </div>
               )}
 
               {formState === 'idle' && (
-                <div className="text-center p-8 opacity-30">
+                <div className="text-center p-8 opacity-40">
                   <p className="font-mono text-xs uppercase tracking-[0.2em]">
                     Ready to Connect
                   </p>

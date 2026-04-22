@@ -1,26 +1,25 @@
 /**
  * IMAGINE DREAMS AFRICA — FOOTER
- * Minimal footer with social links and legal navigation
+ * Brutalist beige theme with ink-style accents
  */
 
 "use client";
 
-import Link from 'next/link';
-import { motion } from 'motion/react';
-import { ArrowUpRight, InstagramLogo, TwitterLogo, LinkedinLogo } from '@phosphor-icons/react';
-import { FOOTER } from '@/lib/constants';
-import Magnetic from '@/components/layout/Magnetic'; // Updated import path
+import Link from "next/link";
+import { motion } from "motion/react";
+import { ArrowUpRight, InstagramLogo, TwitterLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { FOOTER } from "@/lib/constants";
+import Magnetic from "@/components/layout/Magnetic";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full bg-[#080808] text-white pt-32 pb-12 px-6 md:px-12 overflow-hidden border-t border-white/5">
+    <footer className="relative w-full bg-[var(--white)] text-[var(--black)] pt-32 pb-12 px-6 md:px-12 overflow-hidden border-t border-[rgba(8,8,8,0.08)]">
       <div className="max-w-[1800px] mx-auto">
-        
         {/* Top: Call to Action */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-32 gap-12">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -33,12 +32,12 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end gap-6">
             <Magnetic>
-              <Link 
+              <Link
                 href="mailto:hello@imaginedreams.africa"
                 className="group relative flex items-center gap-4 text-xl md:text-2xl p-4 -m-4"
               >
                 <span>Get in touch</span>
-                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
+                <div className="w-12 h-12 rounded-full border border-[rgba(8,8,8,0.18)] flex items-center justify-center group-hover:bg-[var(--black)] group-hover:text-[var(--white)] transition-all duration-500 shadow-[var(--ink-glow)]">
                   <ArrowUpRight size={20} className="group-hover:rotate-45 transition-transform" />
                 </div>
               </Link>
@@ -46,9 +45,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Center: The Massive Brand Anchor (Imagine Dreams Africa) */}
+        {/* Center: Brand Anchor */}
         <div className="relative mb-24 pointer-events-none select-none">
-          <motion.div 
+          <motion.div
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -61,25 +60,30 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar: Navigation & Socials */}
-        <div className="flex flex-col lg:flex-row justify-between items-center pt-10 border-t border-white/10 gap-8">
-          
+        <div className="flex flex-col lg:flex-row justify-between items-center pt-10 border-t border-[rgba(8,8,8,0.08)] gap-8">
           {/* Copyright & Location */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 text-[10px] tracking-widest uppercase text-white/40">
+          <div className="flex flex-col sm:flex-row items-center gap-6 text-[10px] tracking-widest uppercase text-black/60">
             <p>© {year} {FOOTER.copyright}</p>
             <span className="hidden sm:inline opacity-20">/</span>
             <p>Kampala, Uganda → 00° 18&apos; N 32° 34&apos; E</p>
           </div>
 
           {/* Socials with Magnetic Pull */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-8 text-[var(--black)]">
             <Magnetic>
-              <a href="#" className="p-2 opacity-50 hover:opacity-100 transition-opacity"><InstagramLogo size={24} /></a>
+              <a href="#" className="p-2 opacity-60 hover:opacity-100 transition-opacity">
+                <InstagramLogo size={24} />
+              </a>
             </Magnetic>
             <Magnetic>
-              <a href="#" className="p-2 opacity-50 hover:opacity-100 transition-opacity"><TwitterLogo size={24} /></a>
+              <a href="#" className="p-2 opacity-60 hover:opacity-100 transition-opacity">
+                <TwitterLogo size={24} />
+              </a>
             </Magnetic>
             <Magnetic>
-              <a href="#" className="p-2 opacity-50 hover:opacity-100 transition-opacity"><LinkedinLogo size={24} /></a>
+              <a href="#" className="p-2 opacity-60 hover:opacity-100 transition-opacity">
+                <LinkedinLogo size={24} />
+              </a>
             </Magnetic>
           </div>
 
@@ -89,7 +93,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+                className="text-[10px] uppercase tracking-widest text-black/60 hover:text-[var(--black)] transition-colors"
               >
                 {link.label}
               </Link>
@@ -97,12 +101,7 @@ export function Footer() {
           </nav>
         </div>
       </div>
-
-      <style jsx>{`
-        .outline-text {
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
-        }
-      `}</style>
     </footer>
   );
 }
+

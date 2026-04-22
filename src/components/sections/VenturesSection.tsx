@@ -3,7 +3,6 @@
 /**
  * IMAGINE DREAMS AFRICA — VENTURES SECTION
  * Active ventures proving the system works
- * PRD Section 08: Ventures Section Specifications
  */
 
 import { VENTURES } from '@/lib/constants';
@@ -12,11 +11,11 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll';
 
 export function VenturesSection() {
   return (
-    <section id="ventures" className="brutalist-section bg-[var(--black)]">
+    <section id="ventures" className="brutalist-section bg-[var(--white)] text-[var(--black)]">
       <div className="brutalist-container max-w-[1600px] mx-auto">
         {/* Section label */}
         <RevealOnScroll direction="up">
-          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-white/50 mb-16">
+          <p className="text-[8px] font-mono uppercase tracking-[0.35em] text-black/60 mb-16">
             04 · Active Experiments
           </p>
         </RevealOnScroll>
@@ -27,7 +26,7 @@ export function VenturesSection() {
             VENTURES.<br />
             <span 
               className="text-transparent"
-              style={{ WebkitTextStroke: '1px rgba(240,237,228,0.35)' }}
+              style={{ WebkitTextStroke: '1px rgba(8,8,8,0.25)' }}
             >
               PROOF OF SYSTEM.
             </span>
@@ -49,14 +48,14 @@ export function VenturesSection() {
                 href={venture.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-12 border border-white/10 hover:border-white/30 transition-colors"
+                className="block p-12 border border-[rgba(8,8,8,0.12)] hover:border-[rgba(8,8,8,0.3)] transition-colors bg-[var(--white)]"
               >
                 {/* Large outlined letter */}
                 <div className="mb-10">
                   <span 
-                    className="font-display font-bold text-[80px] leading-none block transition-all duration-300 group-hover:text-white/20"
+                    className="font-display font-bold text-[80px] leading-none block transition-all duration-300 group-hover:text-[var(--black)]/20"
                     style={{ 
-                      WebkitTextStroke: '1px rgba(240,237,228,0.2)',
+                      WebkitTextStroke: '1px rgba(8,8,8,0.2)',
                     }}
                   >
                     {venture.letter}
@@ -69,12 +68,12 @@ export function VenturesSection() {
                 </h3>
 
                 {/* Pillar tag */}
-                <p className="text-[8px] font-mono uppercase tracking-[0.2em] text-white/50 mb-6">
+                <p className="text-[8px] font-mono uppercase tracking-[0.2em] text-black/60 mb-6">
                   {venture.tag}
                 </p>
 
                 {/* Description */}
-                <p className="font-body text-base leading-relaxed text-white/70 mb-8">
+                <p className="font-body text-base leading-relaxed text-[var(--black)]/75 mb-8">
                   {venture.desc}
                 </p>
 
@@ -91,3 +90,4 @@ export function VenturesSection() {
     </section>
   );
 }
+

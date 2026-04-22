@@ -39,14 +39,23 @@ export function SplitTextReveal({
         ? split.words 
         : split.lines;
 
-    gsap.from(targets, {
-      y: '110%',
+    gsap.fromTo(targets, {
+      x: '-110%',
       opacity: 0,
       duration: 1,
       ease: 'power4.out',
       stagger: level === 'chars' ? 0.03 : 0.08,
       delay,
+    }, {
+      x: '0%',
+      opacity: 1,
+      duration: 1,
+      delay: 1,
+      ease: 'elastic.out(1, 0.75)',
+      stagger: level === 'chars' ? 0.03 : 0.08,
     });
+
+
 
     return () => {
       split.revert();

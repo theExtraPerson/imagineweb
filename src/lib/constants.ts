@@ -50,43 +50,56 @@ export const ABOUT = {
 // PILLARS SECTION
 // ═══════════════════════════════════════
 
-export const PILLARS = [
+export interface Pillar {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export const pillarContent: Pillar[] = [
   {
-    num: '01',
-    title: 'Digital Infrastructure',
-    desc: 'Building the foundational systems — servers, frameworks, platforms — that Africa needs to own its digital future.',
-    status: 'Active',
+    id: "01",
+    title: "ICT Infrastructure",
+    description:
+      "Building resilient, scalable, and secure digital infrastructure to power institutions, governments, and enterprises. This includes cloud systems, connectivity frameworks, and interoperable platforms designed for long-term sustainability and growth.",
+    image: "/images/ict.jpg"
   },
   {
-    num: '02',
-    title: 'Data Sovereignty',
-    desc: 'Ensuring African data remains under African control. Policy advocacy, technical infrastructure, and cultural shift.',
-    status: 'Foundation',
+    id: "02",
+    title: "Digital Health",
+    description:
+      "Designing and deploying integrated digital health ecosystems including telemedicine, electronic health records, diagnostics, and AI-driven care systems to improve accessibility, efficiency, and patient outcomes.",
+    image: "/images/health.jpg"
   },
   {
-    num: '03',
-    title: 'Economic Empowerment',
-    desc: 'Creating pathways for African artisans, craftspeople, and entrepreneurs to access global markets on their own terms.',
-    status: 'Active–Empindu',
+    id: "03",
+    title: "Innovation Labs",
+    description:
+      "Creating experimental environments for rapid prototyping, research, and product development. These labs foster collaboration across disciplines to solve real-world problems using emerging technologies.",
+    image: "/images/lab.jpg"
   },
   {
-    num: '04',
-    title: 'Skills Development',
-    desc: 'Connecting skilled technical workers to opportunities. Formalising the informal. Making talent visible.',
-    status: 'Pipeline',
+    id: "04",
+    title: "Conservation Tech",
+    description:
+      "Leveraging technology for environmental protection, biodiversity monitoring, climate intelligence, and sustainable resource management through data-driven conservation systems.",
+    image: "/images/conservation.jpg"
   },
   {
-    num: '05',
-    title: 'Cultural Narrative',
-    desc: 'Shaping how Africa is seen — by Africans and the world. Media, storytelling, representation matters.',
-    status: 'Planning',
+    id: "05",
+    title: "Knowledge Preservation",
+    description:
+      "Digitizing, structuring, and safeguarding indigenous knowledge, cultural heritage, and institutional memory using modern archival systems and AI-enhanced indexing.",
+    image: "/images/knowledge.jpg"
   },
   {
-    num: '06',
-    title: 'Strategic Core',
-    desc: 'The engine room. Operations, partnerships, government relations. Making the system work as one.',
-    status: 'Strategic Core',
-  },
+    id: "06",
+    title: "Data Sovereignty",
+    description:
+      "Ensuring ownership, control, and governance of data within local jurisdictions. This includes secure data architectures, compliance frameworks, and decentralized data systems.",
+    image: "/images/data.jpg"
+  }
 ];
 
 // ═══════════════════════════════════════
@@ -122,23 +135,34 @@ export const VENTURES = [
 // ═══════════════════════════════════════
 
 export const VISION = {
-  year: '2035',
-  label: '05 · A Glimpse. Not the Blueprint.',
-  manifesto: 'By 2035, Africa\'s digital infrastructure is owned by Africans. African servers host African frameworks. African data serves African interests. When a collector in Copenhagen buys a basket from Kampala, 90% of the margin stays in Uganda.',
+  label: "VISION // 2035",
+  
+  // This is used for the automated "redaction" logic 
+  // (the code looks for these specific words to cover them)
   redactedPhrases: [
-    'African servers',
-    'African frameworks',
-    'a collector in Copenhagen',
-    '90% of the margin',
+    "Sovereign", 
+    "Africa", 
+    "Heritage", 
+    "Innovation", 
+    "Sustainable", 
+    "Data"
   ],
+
+  // The primary massive heading text
+  manifesto: "A DIGITALLY SOVEREIGN AFRICA THAT LEVERAGES TECHNOLOGY TO PRESERVE ITS HERITAGE, DRIVE INNOVATION, AND ENSURE SUSTAINABLE DEVELOPMENT FOR ALL ITS PEOPLE.",
+
+  // The secondary quote text below it
+  secondaryVision: "We envision an Africa where technology serves the people, not the other way around—where our data, our innovations, and our digital future belong to us.",
+
+  // The labels for the grid at the bottom
   pillarDots: [
-    'Digital Infrastructure',
-    'Data Sovereignty',
-    'Economic Empowerment',
-    'Skills Development',
-    'Cultural Narrative',
-    'Strategic Core',
-  ],
+    "Heritage_Preservation",
+    "Innovation_Cycles",
+    "Sustainable_Dev",
+    "Data_Sovereignty",
+    "System_Integrity",
+    "Digital_Futures"
+  ]
 };
 
 // ═══════════════════════════════════════
@@ -168,7 +192,7 @@ export const PEOPLE = {
 export const CONTACT = {
   heading: ['LET\'S', 'BUILD', 'TOGETHER.'],
   sub: 'Techpreneur. Investor. Government partner. Developer. Dreamer. However you engage with us, we want to hear from you.',
-  email: 'hello@imaginedreams.org',
+  email: 'info@imaginedreams.org',
   location: 'Kampala, Uganda / East Africa',
   socials: [
     { label: 'Twitter/X', href: '#' },

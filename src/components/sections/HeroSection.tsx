@@ -72,29 +72,29 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center pb-32 px-8 md:px-16 lg:px-24 overflow-hidden brutalist-section"
       style={{
-        backgroundColor: 'var(--black)',
+        backgroundColor: 'var(--white)',
         backgroundImage: `url("${kentePattern}")`,
         backgroundSize: '80px 80px',
       }}
     >
       {/* 3D African Continent Particle Scene Background */}
-      <AfricanContinentScene />
+    
       
       {/* Decorative rotated square top-right */}
       <div 
-        className="absolute top-0 right-0 w-64 h-64 border border-white/10 rotate-45 translate-x-1/2 -translate-y-1/2"
+        className="absolute top-0 right-0 w-64 h-64 border border-[rgba(8,8,8,0.12)] rotate-45 translate-x-1/2 -translate-y-1/2"
         aria-hidden="true"
       />
 
       {/* Location badge */}
       <div className="absolute top-12 left-12 md:top-20 md:left-20 flex items-center gap-3">
-        <div className="relative flex items-center gap-2 text-xs font-mono uppercase tracking-[0.15em] text-white/70">
+        <div className="relative flex items-center gap-2 text-xs font-mono uppercase tracking-[0.15em] text-black/70">
           <span className="relative flex h-2 w-2">
             <span 
               ref={locationDotRef}
-              className="absolute inline-flex h-full w-full rounded-full bg-white opacity-100"
+              className="absolute inline-flex h-full w-full rounded-full bg-[var(--black)] opacity-100"
             />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-white/30" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--black)]/20" />
           </span>
           {HERO.location}
         </div>
@@ -108,7 +108,7 @@ export function HeroSection() {
             <SplitTextReveal 
               text={HERO.title[0]} 
               level="words"
-              delay={0.1}
+              delay={0.8}
               className="text-[clamp(52px,_12vw,_160px)] leading-none"
             />
           </div>
@@ -122,7 +122,7 @@ export function HeroSection() {
                 "text-transparent",
                 "[text-shadow:_1px_1px_0_currentColor]"
               )}
-              style={{ WebkitTextStroke: '1px rgba(240,237,228,0.35)' }}
+              style={{ WebkitTextStroke: '1px var(--black)' }}
             />
           </div>
           <div className="overflow-hidden">
@@ -136,7 +136,7 @@ export function HeroSection() {
         </h1>
 
         {/* Tagline */}
-        <p className="font-body italic text-xl md:text-2xl text-white/70 max-w-3xl mb-16">
+        <p className="font-body italic text-xl md:text-2xl text-[var(--black)]/75 max-w-3xl mb-16">
           {HERO.tagline}
         </p>
 
@@ -146,18 +146,19 @@ export function HeroSection() {
             ref={scrollIndicatorRef}
             className="flex flex-col items-center gap-4 mt-20"
           >
-            <span className="text-[8px] font-mono uppercase tracking-[0.3em] text-white/50">
+            <span className="text-[8px] font-mono uppercase tracking-[0.3em] text-black/60">
               Scroll
             </span>
-            <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+            <div className="w-px h-12 bg-gradient-to-b from-[var(--black)] to-transparent" />
           </div>
         )}
       </div>
 
       {/* Section counter */}
-      <div className="absolute bottom-12 right-12 text-[8px] font-mono uppercase tracking-[0.2em] text-white/30">
+      <div className="absolute bottom-12 right-12 text-[8px] font-mono uppercase tracking-[0.2em] text-black/40">
         01 / 07
       </div>
     </section>
   );
 }
+

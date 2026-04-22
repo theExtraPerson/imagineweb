@@ -60,7 +60,7 @@ export function AboutSection() {
 
         {/* Stats grid */}
         <RevealOnScroll direction="up" start="top 80%">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 mb-20">
             {ABOUT.stats.map((stat, index) => (
               <MotionCard
                 key={stat.label}
@@ -70,7 +70,7 @@ export function AboutSection() {
                 viewport={{ once: true }}
                 className="bg-[var(--black)] p-12 flex flex-col items-center justify-center aspect-square"
               >
-                <span className="font-display font-bold text-6xl md:text-7xl mb-3">
+                <span className="font-display text-white/50 font-bold text-6xl md:text-7xl mb-3">
                   {stat.value}
                 </span>
                 <span className="text-[8px] font-mono uppercase tracking-[0.2em] text-white/50 text-center leading-relaxed">

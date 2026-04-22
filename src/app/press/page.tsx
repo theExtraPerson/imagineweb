@@ -21,8 +21,8 @@ export default function PressPage() {
             <h2 className="font-display font-bold text-2xl mt-12 mb-4">Media Contact</h2>
             <div className="space-y-4 not-prose mb-12">
               <p className="font-body text-xl italic">
-                <a href="mailto:hello@imaginedreams.org" className="text-white underline hover:opacity-70">
-                  hello@imaginedreams.org
+                <a href="mailto:info@imaginedreams.org" className="text-white underline hover:opacity-70">
+                  info@imaginedreams.org
                 </a>
               </p>
               <p className="font-mono text-sm uppercase tracking-[0.1em] text-white/50">

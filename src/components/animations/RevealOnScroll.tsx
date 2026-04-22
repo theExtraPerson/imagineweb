@@ -74,6 +74,7 @@ export function RevealOnScroll({
         duration: 0.7,
         delay: delayRef.current,
         ease: 'power3.out',
+        stagger: stagger,
         scrollTrigger: {
           trigger: element,
           start,
@@ -85,7 +86,7 @@ export function RevealOnScroll({
     return () => {
       animation.kill();
     };
-  }, [direction, start]);
+  }, [direction, stagger, start]);
 
   return (
     <div 
